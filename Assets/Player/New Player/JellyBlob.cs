@@ -14,14 +14,14 @@ public class JellyBlob : MonoBehaviour {
 	JellySprite m_JellySprite;
 	float m_BounceTimer;
 
-	JellyPlayer player;
+	PlayerManager playerManager;
 
 
 	void Start () 
 	{
 		m_JellySprite = GetComponent<JellySprite>();
 		m_BounceTimer = UnityEngine.Random.Range(m_MinBounceTime, m_MaxBounceTime);
-		player = FindObjectOfType<JellyPlayer>();	}
+		playerManager = FindObjectOfType<PlayerManager>();	}
 
 
 	void Update () 
@@ -36,7 +36,7 @@ public class JellyBlob : MonoBehaviour {
 	}
 
 	Vector2 CalculateJumpDirection(){
-		Vector2 playerPos = player.gameObject.transform.position;
+		Vector2 playerPos = playerManager.currentPlayer.gameObject.transform.position;
 		Vector2 pos = transform.position;
 		float disToPlayer = Vector2.Distance(playerPos, pos);
 		float originOffset = (2f + Random.Range(-1f, 1f)) * disToPlayer;
@@ -62,10 +62,9 @@ public class JellyBlob : MonoBehaviour {
 	}
 
 	void OnJellyCollisionEnter2D(JellySprite.JellyCollision2D collision){
-		if(collision.Collision2D.gameObject.tag == "Player" && player.canScale){
+		if(collision.Collision2D.gameObject.tag == "Player" && playerManager.canScale){
 			
-			player.canScale = false;
-			player.PickupJelly(1f);
+			playerManager.Scale(1);
 			print("hit");
 			Destroy(gameObject);
 		}

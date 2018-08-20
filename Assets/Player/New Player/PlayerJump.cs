@@ -66,7 +66,7 @@ public class PlayerJump : MonoBehaviour {
 	void OnMouseUp(){
 		startDrag = false;
 		jelly.AddForce(jumpForce);
-		jelly.CentralPoint.Body2D.AddTorque((mPos.x - transform.position.x) * (jelly.m_SpriteScale.x * 10f * jelly.m_Mass));
+		jelly.CentralPoint.Body2D.AddTorque((mPos.x - transform.position.x) * (forceMultiplier * jelly.m_Mass));
 	}
 
 }

@@ -9,48 +9,48 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1395496400160118}
+  m_RootGameObject: {fileID: 1229904074764692}
   m_IsPrefabParent: 1
---- !u!1 &1395496400160118
+--- !u!1 &1229904074764692
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4663036110756952}
-  - component: {fileID: 33753851130951094}
-  - component: {fileID: 23670313541556854}
-  - component: {fileID: 114234615945455200}
-  - component: {fileID: 114571656159089538}
-  - component: {fileID: 58778744696430026}
-  - component: {fileID: 114560683260493604}
+  - component: {fileID: 4333879909352260}
+  - component: {fileID: 33409390351181868}
+  - component: {fileID: 23571255976136534}
+  - component: {fileID: 114096642964601368}
+  - component: {fileID: 114220359051323074}
+  - component: {fileID: 58808193087641056}
+  - component: {fileID: 114706922384460918}
   m_Layer: 8
-  m_Name: JellyPlayer 3
+  m_Name: JellyPlayer - 7
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4663036110756952
+--- !u!4 &4333879909352260
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1395496400160118}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.89, y: -69.3, z: 0}
+  m_GameObject: {fileID: 1229904074764692}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -626, y: -666, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23670313541556854
+--- !u!23 &23571255976136534
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1395496400160118}
+  m_GameObject: {fileID: 1229904074764692}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -58,6 +58,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 0}
   m_StaticBatchInfo:
@@ -79,19 +80,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
---- !u!33 &33753851130951094
+--- !u!33 &33409390351181868
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1395496400160118}
+  m_GameObject: {fileID: 1229904074764692}
   m_Mesh: {fileID: 0}
---- !u!58 &58778744696430026
+--- !u!58 &58808193087641056
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1395496400160118}
+  m_GameObject: {fileID: 1229904074764692}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -100,39 +101,39 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
---- !u!114 &114234615945455200
+  m_Radius: 15
+--- !u!114 &114096642964601368
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1395496400160118}
+  m_GameObject: {fileID: 1229904074764692}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87f1fa7a810d84c4f8ed2cfed9eec8f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Style: 1
+  m_Style: 4
   m_FreeModeBodyPositions:
   - {x: 0, y: 0, z: 0}
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.010530472, y: -0.5050659, z: 0}
-  - {x: 0.5054712, y: 0.0004043579, z: 0}
-  - {x: 0, y: 0.50587463, z: 0}
-  - {x: -0.49494076, y: -0.020652771, z: 0}
+  - {x: -3.5, y: -3.5, z: 0}
+  - {x: 3.5, y: -3.5, z: 0}
+  - {x: -3.5, y: 3.5, z: 0}
+  - {x: 3.5, y: 3.5, z: 0}
+  - {x: -4.460142, y: -0.044254303, z: 0}
+  - {x: 4.268982, y: 0.019470215, z: 0}
+  - {x: 0.06371592, y: 4.224739, z: 0}
+  - {x: 0, y: -4.185791, z: 0}
   m_FreeModeBodyRadii:
-  - 0.5
-  - 0.5
-  - 0.5
-  - 0.5
-  - 0.5
-  - 0.4102831
-  - 0.41028404
-  - 0.4208145
-  - 0.43134546
+  - 3.5
+  - 3.5
+  - 3.5
+  - 3.5
+  - 3.5
+  - 2.465477
+  - 2.592906
+  - 2.6566238
+  - 2.7840576
   m_FreeModeBodyKinematic: 000000000000000000
   m_MassStyle: 0
   m_PhysicsMaterial: {fileID: 0}
@@ -144,11 +145,11 @@ MonoBehaviour:
   m_ManualPositioning: 0
   m_VertexDensity: 10
   m_SphereRadius: 0.25
-  m_DistanceExponent: 3
-  m_Stiffness: 10
-  m_Mass: 30
+  m_DistanceExponent: 3.5
+  m_Stiffness: 9
+  m_Mass: 70
   m_LockRotation: 0
-  m_GravityScale: 30
+  m_GravityScale: 10
   m_UseGravity: 1
   m_CollideConnected: 0
   m_CentralBodyKinematic: 0
@@ -157,12 +158,12 @@ MonoBehaviour:
   m_RadiusPoints: 8
   m_GridColumns: 5
   m_GridRows: 5
-  m_DampingRatio: 2
+  m_DampingRatio: 1
   m_SoftBodyScale: {x: 1, y: 1}
   m_SoftBodyRotation: 0
-  m_SoftBodyOffset: {x: 0, y: 0}
+  m_SoftBodyOffset: {x: -0, y: -0}
   m_CentralBodyOffset: {x: -0, y: -0}
-  m_SpriteScale: {x: 3, y: 3}
+  m_SpriteScale: {x: 7, y: 7}
   m_2DMode: 1
   m_AttachNeighbors: 0
   m_FlipX: 0
@@ -171,41 +172,39 @@ MonoBehaviour:
   m_NumAttachPoints: 0
   m_AttachPoints: []
   m_Color: {r: 0.44708347, g: 0.78676474, b: 0.2140463, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 8a63d7a3f871ff64988f7b2317e860f0, type: 3}
---- !u!114 &114560683260493604
+  m_Sprite: {fileID: 21300000, guid: d473dd71eeeebe34ea134133a3137813, type: 3}
+--- !u!114 &114220359051323074
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1395496400160118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adc1edfcb9be3dc40a75e6f82032fcb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minScale: 2
-  maxScale: 100
-  scaleIncrement: 1
-  cameraZoomOnScale: 5
-  pickupCooldown: 0.5
-  canScale: 1
-  jellyPrefab: {fileID: 0}
---- !u!114 &114571656159089538
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1395496400160118}
+  m_GameObject: {fileID: 1229904074764692}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d9b7ee4d12a17c4bb18ca096afba895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startDrag: 0
+  jelly: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 1024
   jumpForce: {x: 0, y: 0, z: 0}
   trajectory: {fileID: 0}
-  MaxForce: 17.5
-  forceMultiplier: 60
+  MaxForce: 70
+  forceMultiplier: 10
+--- !u!114 &114706922384460918
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1229904074764692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc1edfcb9be3dc40a75e6f82032fcb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myJelly: {fileID: 0}
+  homePos: {x: 0, y: 0}
+  myJump: {fileID: 0}
+  myVCam: {fileID: 0}

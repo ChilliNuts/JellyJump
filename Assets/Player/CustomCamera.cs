@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class CameraZoomOnPlayer : MonoBehaviour {
+public class CustomCamera : MonoBehaviour {
 
 	CinemachineVirtualCamera cam;
 	public float duration = 1f;
@@ -32,5 +32,15 @@ public class CameraZoomOnPlayer : MonoBehaviour {
 			yield return null;
 		}
 		print("finished Zooming");
+	}
+
+	public void SetFollowTarget(Transform newTarget){
+		StartCoroutine("SetTarget", newTarget);
+	}
+
+	IEnumerator SetTarget(Transform newTarget){
+		cam.Follow = null;
+		yield return new WaitForFixedUpdate();
+		cam.Follow = newTarget;
 	}
 }

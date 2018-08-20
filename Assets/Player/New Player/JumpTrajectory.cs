@@ -26,9 +26,11 @@ public class JumpTrajectory : MonoBehaviour
 	private Collider2D _hitObject;
 	public Collider2D hitObject { get { return _hitObject; } }
 
+	JellySprite j;
 
 	void Awake(){
-		gravityMultiplier = playerJump.GetComponent<JellySprite>().m_GravityScale;
+		j = playerJump.GetComponent<JellySprite>();
+		gravityMultiplier = j.m_GravityScale;
 		originalStartColor = sightLine.startColor;
 	}
 
@@ -82,7 +84,7 @@ public class JumpTrajectory : MonoBehaviour
 			float segTime = (segVelocity.sqrMagnitude != 0) ? segmentScale / segVelocity.magnitude : 0;
 
 			// Add velocity from gravity for this segment's timestep
-			segVelocity = segVelocity + Physics2D.gravity * gravityMultiplier * segTime;
+			segVelocity = segVelocity + Physics2D.gravity * gravityMultiplier * j.m_Mass * segTime;
 
 			// Check to see if we're going to hit a physics object
 			RaycastHit2D hit = Physics2D.Raycast(segments[i - 1], segVelocity, segmentScale, rayMask);

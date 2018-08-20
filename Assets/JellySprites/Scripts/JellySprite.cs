@@ -2105,9 +2105,9 @@ public abstract class JellySprite : MonoBehaviour
                     {
                         springJoints[jointLoop].connectedAnchor = springJoints[jointLoop].connectedAnchor * scaleRatio;
 						//springJoints[jointLoop].frequency *= scaleRatio;
-						if(scaleRatio > 1){
-							springJoints[jointLoop].frequency -= 0.25f;
-						}else springJoints[jointLoop].frequency += 0.25f;
+//						if(scaleRatio > 1){
+//							springJoints[jointLoop].frequency -= 0.25f;
+//						}else springJoints[jointLoop].frequency += 0.25f;
 
                     }
                 }

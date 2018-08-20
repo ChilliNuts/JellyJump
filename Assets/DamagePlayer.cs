@@ -5,16 +5,17 @@ using UnityEngine;
 public class DamagePlayer : MonoBehaviour {
 
 
-	JellyPlayer player;
+	PlayerManager playerManager;
 
 	void Awake () {
-		player = FindObjectOfType<JellyPlayer>();
+		playerManager = FindObjectOfType<PlayerManager>();
 	}
 	
 	void OnCollisionEnter2D(Collision2D other){
-		if(other.gameObject.tag == "Player" && player.canScale){
-			player.canScale = false;
-			player.LoseJelly(player.scaleIncrement);
+		if(other.gameObject.tag == "Player" && playerManager.canScale){
+			playerManager.Scale(-1);
+//			player.canScale = false;
+//			player.LoseJelly(player.scaleIncrement);
 
 		}
 	}
