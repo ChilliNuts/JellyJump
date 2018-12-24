@@ -39,6 +39,9 @@ public class PlayerJump : MonoBehaviour {
 	}
 
 	void Dragging(){
+		//test code... update!!!
+		FindObjectOfType<PlotTrajectory>().transform.position = this.transform.position;
+
 		trajectory.transform.position = transform.position;
 		mPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		mPos.z = 0;
@@ -55,7 +58,7 @@ public class PlayerJump : MonoBehaviour {
 
 		//jumpForce = transform.position - mPos;
 		//jumpForce = jumpForce.normalized * Mathf.Clamp(jumpForce.sqrMagnitude, 0, MaxForce);
-		jumpForce *= forceMultiplier * jelly.m_Mass;
+		jumpForce *= forceMultiplier;
 
 		Debug.DrawLine(mPos, transform.position, Color.red);
 		//Debug.Log(Physics2D.Linecast(mPos, transform.position, mask).point);
@@ -66,7 +69,8 @@ public class PlayerJump : MonoBehaviour {
 	void OnMouseUp(){
 		startDrag = false;
 		jelly.AddForce(jumpForce);
-		jelly.CentralPoint.Body2D.AddTorque((mPos.x - transform.position.x) * (forceMultiplier * jelly.m_Mass));
+
+		jelly.CentralPoint.Body2D.AddTorque((mPos.x - transform.position.x) * (forceMultiplier));
 	}
 
 }

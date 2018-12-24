@@ -65,7 +65,6 @@ public class JellyBlob : MonoBehaviour {
 		if(collision.Collision2D.gameObject.tag == "Player" && playerManager.canScale){
 			
 			playerManager.Scale(1);
-			print("hit");
 			Destroy(gameObject);
 		}
 	}

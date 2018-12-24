@@ -36,10 +36,10 @@ public class JumpTrajectory : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		if(playerJump.startDrag && playerJump.jumpForce.magnitude >= 300f){
+		if(playerJump.startDrag && playerJump.jumpForce.magnitude >= 100f){
 			FadeLine(false);
 			simulatePath();
-		}else if(!playerJump.startDrag || playerJump.jumpForce.magnitude < 300f) {
+		}else if(!playerJump.startDrag || playerJump.jumpForce.magnitude < 100f) {
 
 			FadeLine(true);
 		}
@@ -84,7 +84,7 @@ public class JumpTrajectory : MonoBehaviour
 			float segTime = (segVelocity.sqrMagnitude != 0) ? segmentScale / segVelocity.magnitude : 0;
 
 			// Add velocity from gravity for this segment's timestep
-			segVelocity = segVelocity + Physics2D.gravity * gravityMultiplier * j.m_Mass * segTime;
+			segVelocity = segVelocity + Physics2D.gravity * gravityMultiplier * j.m_Mass *5.5f* segTime;
 
 			// Check to see if we're going to hit a physics object
 			RaycastHit2D hit = Physics2D.Raycast(segments[i - 1], segVelocity, segmentScale, rayMask);
