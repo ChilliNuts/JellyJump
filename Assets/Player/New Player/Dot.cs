@@ -9,11 +9,16 @@ public class Dot : MonoBehaviour {
 	[HideInInspector] public CircleCollider2D myCollider;
 	public SpriteRenderer myRend;
 	[HideInInspector] public bool hitGround;
+	public float fadeTime = 0.5f;
+	public bool fading;
 
 	void Awake(){
 		myRend = GetComponent<SpriteRenderer>();
 		myCollider = GetComponent<CircleCollider2D>();
 		transform.position = origin;
+		Color c = myRend.color;
+		c.a = 0;
+		myRend.color = c;
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
@@ -25,14 +30,34 @@ public class Dot : MonoBehaviour {
 		hitGround = false;
 	}
 
-
-	// Use this for initialization
-	void Start () {
-		
+	void FadeDot(){
+		Color tempColor = myRend.color;
+		if (myRend.color.a > 0) {
+			tempColor.a -= Time.deltaTime / fadeTime;
+			myRend.color = tempColor;
+		}else fading = false;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	void Update(){
+		if(fading){
+			FadeDot();
+		}
 	}
 }
+
+//	public void FadeLine (bool fadeOut){
+//		Color startColor = myRend.color;
+//		Color endColor = Color.clear;
+//		if (fadeOut) {
+//			if (myRend.color.a > 0) {
+//				startColor.a -= Time.deltaTime * fadeTime;
+//				myRend.color = startColor;
+//			}
+//		}else if(!fadeOut){
+//			if (myRend.color.a < visibleColorState.a) {
+//				startColor.a += Time.deltaTime * fadeTime;
+//				myRend.color = startColor;
+//			}
+//		}
+//	}
+

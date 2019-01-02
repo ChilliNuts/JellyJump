@@ -9,7 +9,7 @@ public class PlayerJump : MonoBehaviour {
 	[HideInInspector]public JellySprite jelly;
 	public LayerMask groundLayer;
 	[HideInInspector] public Vector3 jumpForce;
-	public GameObject trajectory;
+	PlotTrajectory trajectory;
 	Ray2D dragRay;
 	Vector3 mPos;
 	public float MaxForce = 50f;
@@ -17,14 +17,19 @@ public class PlayerJump : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		
 		jelly = GetComponent<JellySprite>();
+		trajectory = FindObjectOfType<PlotTrajectory>();
 		dragRay = new Ray2D(transform.position, trajectory.transform.position);
+
 	}
 
 	// Update is called once per frame
 	void Update () {
 		if(startDrag){
+
 			Dragging();
+
 		}else if (Input.GetMouseButtonDown(0) && !jelly.IsGrounded(groundLayer, 2) && Camera.main.ScreenToWorldPoint(Input.mousePosition).y < transform.position.y){
 
 			mPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -36,13 +41,17 @@ public class PlayerJump : MonoBehaviour {
 	void OnMouseDown(){
 
 		startDrag = true;
+
+		trajectory.transform.position = transform.position;
+		trajectory.showArc = true;
+		trajectory.StartFade(false);
 	}
 
 	void Dragging(){
-		//test code... update!!!
-		FindObjectOfType<PlotTrajectory>().transform.position = this.transform.position;
 
-		trajectory.transform.position = transform.position;
+
+
+
 		mPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		mPos.z = 0;
 		Vector3 dragDir = mPos - transform.position;
@@ -68,6 +77,9 @@ public class PlayerJump : MonoBehaviour {
 
 	void OnMouseUp(){
 		startDrag = false;
+
+		trajectory.showArc = false;
+		trajectory.StartFade(true);
 		jelly.AddForce(jumpForce);
 
 		jelly.CentralPoint.Body2D.AddTorque((mPos.x - transform.position.x) * (forceMultiplier));

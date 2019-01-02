@@ -14,11 +14,11 @@ public class PlayerManager : MonoBehaviour {
 
 	public bool canScale = true;
 
-	JumpTrajectory trajectory;
+	PlotTrajectory trajectory;
 
 	// Use this for initialization
 	void Start () {
-		trajectory = FindObjectOfType<JumpTrajectory>();
+		trajectory = FindObjectOfType<PlotTrajectory>();
 		InitPlayer();
 	}
 	
@@ -37,7 +37,6 @@ public class PlayerManager : MonoBehaviour {
 		currentPlayer = sizes[startingSize];
 		currentPlayer.myJelly.SetPosition(startingPos.position, true);
 		currentPlayer.myVCam.Priority = 1;
-		trajectory.playerJump = currentPlayer.myJump;
 	}
 
 	public void Scale(int scaleBy){
@@ -57,9 +56,9 @@ public class PlayerManager : MonoBehaviour {
 			if(currentSize + scaleBy < currentSize){
 				StartCoroutine(EjectBlob());
 			}
-
-			trajectory.playerJump = currentPlayer.myJump;
+				
 			currentSize += scaleBy;
+			trajectory.ScaleDots(scaleBy ,currentSize);
 		}else print("?");
 	}
 		

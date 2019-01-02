@@ -119,9 +119,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   jumpForce: {x: 0, y: 0, z: 0}
-  trajectory: {fileID: 0}
   MaxForce: 20
-  forceMultiplier: 15
+  forceMultiplier: 275
 --- !u!114 &114591254853041262
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -11,11 +11,11 @@ public class PlotTrajectory : MonoBehaviour {
 	Dot[] allDots;
 	List<Dot> visibleDots = new List<Dot>();
 	int numVisibleDots = 0;
-	public Vector2 testForce;
 	public LayerMask ground;
 	public Color startColor;
 	public Color endColor;
 	bool hitGround;
+	public bool showArc;
 
 	// Use this for initialization
 	void Start () {
@@ -28,8 +28,12 @@ public class PlotTrajectory : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-		CreateTrajectory();
+
+		if(showArc){
+			CreateTrajectory();
+		}
+
+
 		//Plot(this.transform.position, player.currentPlayer.myJump.jumpForce);
 	}
 
@@ -104,8 +108,30 @@ public class PlotTrajectory : MonoBehaviour {
 
 			colorState = Color.Lerp(startColor, endColor, lerpAmount);
 			visibleDots[i].myRend.color = colorState;
+
 		}
 		numVisibleDots = visibleDots.Count;
 
 	}
+
+	public void ScaleDots(int scale, int size){
+		//float scaleSize = (size * scale) / 10f;
+		float scaleSize = Mathf.Lerp(0.3f, 3f, size/10f);
+		print(scaleSize);
+		iteration = Mathf.Lerp(0.1f,0.5f,1f - size/10f);
+
+		foreach(Dot d in allDots){
+			Vector2 dScale = d.transform.localScale;
+
+			dScale.x = scaleSize;
+			dScale.y = scaleSize;
+			d.transform.localScale = dScale;
+		}
+	}
+	public void StartFade(bool fade){
+		foreach(Dot d in allDots){
+			d.fading = fade;
+		}
+	}
+
 }

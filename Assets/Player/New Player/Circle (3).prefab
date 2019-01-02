@@ -72,6 +72,8 @@ MonoBehaviour:
   myCollider: {fileID: 0}
   myRend: {fileID: 212750024983977076}
   hitGround: 0
+  fadeTime: 0.75
+  fading: 0
 --- !u!212 &212750024983977076
 SpriteRenderer:
   m_ObjectHideFlags: 1

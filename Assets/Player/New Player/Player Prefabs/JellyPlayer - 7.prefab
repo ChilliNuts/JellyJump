@@ -146,8 +146,8 @@ MonoBehaviour:
   m_VertexDensity: 10
   m_SphereRadius: 0.25
   m_DistanceExponent: 3.5
-  m_Stiffness: 9
-  m_Mass: 70
+  m_Stiffness: 14
+  m_Mass: 20
   m_LockRotation: 0
   m_GravityScale: 10
   m_UseGravity: 1
@@ -190,9 +190,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   jumpForce: {x: 0, y: 0, z: 0}
-  trajectory: {fileID: 0}
   MaxForce: 70
-  forceMultiplier: 10
+  forceMultiplier: 365
 --- !u!114 &114706922384460918
 MonoBehaviour:
   m_ObjectHideFlags: 1
