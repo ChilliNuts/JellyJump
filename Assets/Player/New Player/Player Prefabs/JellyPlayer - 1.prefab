@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 23264183281950394}
   - component: {fileID: 114541536002232742}
   - component: {fileID: 114833821965368394}
-  - component: {fileID: 58140400718967524}
   - component: {fileID: 114490171321631658}
   m_Layer: 8
   m_Name: JellyPlayer - 1
@@ -87,21 +86,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1662068340937704}
   m_Mesh: {fileID: 0}
---- !u!58 &58140400718967524
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1662068340937704}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 3
 --- !u!114 &114490171321631658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -204,6 +188,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1024
+  isGrounded: 0
+  dropDelay: 0.15
   jumpForce: {x: 0, y: 0, z: 0}
   MaxForce: 10
   forceMultiplier: 400

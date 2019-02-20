@@ -31,10 +31,8 @@ public class PlotTrajectory : MonoBehaviour {
 
 		if(showArc){
 			CreateTrajectory();
+			transform.position = player.currentPlayer.transform.position;
 		}
-
-
-		//Plot(this.transform.position, player.currentPlayer.myJump.jumpForce);
 	}
 
 	Vector2[] Plot(Vector2 pos, Vector2 force){
