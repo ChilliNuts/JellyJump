@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class DeathArea : MonoBehaviour {
 
-	PlayerManager player;
+	JellyPlayer player;
 
 	void Awake () {
-		player = FindObjectOfType<PlayerManager>();
+		player = FindObjectOfType<JellyPlayer>();
 	}
 
 
 	void OnTriggerEnter2D(Collider2D other){
-		
-		if(other.gameObject == player.currentPlayer.myJelly.CentralPoint.GameObject){
+		if(other.gameObject == player.gameObject){
 
 			//TODO: Simple reset for prototyping... Make something better.
 			Application.LoadLevel(0);

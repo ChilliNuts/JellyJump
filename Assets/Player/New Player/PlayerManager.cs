@@ -11,12 +11,10 @@ public class PlayerManager : MonoBehaviour {
 	public int startingSize;
 	public Transform startingPos;
 	public JellyBlob blobPrefab;
-	public CameraProxy camProxy;
 
 	public bool canScale = true;
 
 	PlotTrajectory trajectory;
-
 
 	// Use this for initialization
 	void Start () {
@@ -61,8 +59,7 @@ public class PlayerManager : MonoBehaviour {
 				
 			currentSize += scaleBy;
 			trajectory.ScaleDots(scaleBy ,currentSize);
-			camProxy.skipFrame = true;
-		}
+		}else print("?");
 	}
 		
 	public void Activate(JellyPlayer j){

@@ -8,15 +8,13 @@ public class RisingWater : MonoBehaviour {
 	public float smoothTime = 3f;
 	public float maxSpeed = 5f;
 	Vector2 yVelocity;
-	PlayerManager player;
 	Transform target;
 	public float maxHeightReached;
 
 
 	// Use this for initialization
 	void Start () {
-		player = FindObjectOfType<PlayerManager>();
-		target = player.camProxy.transform;
+		target = FindObjectOfType<PlayerJump>().transform;
 		maxHeightReached = target.position.y;
 	}
 	
