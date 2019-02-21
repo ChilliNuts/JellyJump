@@ -35,7 +35,10 @@ public class Dot : MonoBehaviour {
 		if (myRend.color.a > 0) {
 			tempColor.a -= Time.deltaTime / fadeTime;
 			myRend.color = tempColor;
-		}else fading = false;
+		}else {
+			fading = false;
+			transform.position = origin;
+		}
 	}
 
 	void Update(){
